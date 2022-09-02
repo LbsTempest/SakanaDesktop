@@ -15,7 +15,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(sakana WIN32 main.cpp qt_ui_sakana.h qt_ui_sakana.ui qt_ui_sakana.cpp)
+add_executable(sakana WIN32 main.cpp qt_ui_sakana.h qt_ui_sakana.ui qt_ui_sakana.cpp num_vector.cpp num_vector.h)
 target_link_libraries(sakana
         Qt::Core
         Qt::Gui
