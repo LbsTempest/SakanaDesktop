@@ -21,6 +21,10 @@ num_vector num_vector::divide(double number) const {
     return {x / number, y / number};
 }
 
+num_vector num_vector::negate() const {
+    return  {-x, -y};
+}
+
 double num_vector::length() const {
     return sqrt(x * x + y * y);
 }
@@ -39,6 +43,10 @@ num_vector num_vector::operator+(const num_vector &other) const {
 
 num_vector num_vector::operator-(const num_vector &other) const {
     return minus(other);
+}
+
+num_vector num_vector::operator-() const {
+    return negate();
 }
 
 num_vector num_vector::operator*(double num) const {
