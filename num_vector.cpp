@@ -30,7 +30,9 @@ double num_vector::length() const {
 }
 
 num_vector num_vector::normalize() const {
-    return *this / length();
+    if (*this == ZERO_VECTOR)
+        return ZERO_VECTOR;
+    return divide(length());
 }
 
 double num_vector::dot(const num_vector &other) const {
@@ -67,4 +69,16 @@ double num_vector::get_x() const {
 
 double num_vector::get_y() const {
     return y;
+}
+
+bool num_vector::operator==(const num_vector &other) const {
+    return x == other.x && y == other.y;
+}
+
+bool num_vector::operator!=(const num_vector &other) const {
+    return x != other.x || y != other.y;
+}
+
+num_vector num_vector::projection(const num_vector &other) const {
+    return other.normalize() * (dot(other) / other.length());
 }

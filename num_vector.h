@@ -18,6 +18,7 @@ public:
     [[nodiscard]] num_vector negate() const;
     [[nodiscard]] double length() const;
     [[nodiscard]] double dot(const num_vector &) const;
+    [[nodiscard]] num_vector projection(const num_vector &) const;
 
     num_vector operator +(const num_vector &) const;
     num_vector operator -(const num_vector &) const;
@@ -25,14 +26,20 @@ public:
     num_vector operator *(double) const;
     num_vector operator /(double) const;
     double operator *(const num_vector &) const;
+    bool operator ==(const num_vector &) const;
+    bool operator !=(const num_vector &) const;
 
     [[nodiscard]] double get_x() const;
     [[nodiscard]] double get_y() const;
-
 private:
     double x;
     double y;
 };
 
+const num_vector ZERO_VECTOR(0, 0);
+const num_vector POSITIVE_X_VECTOR(1, 0);
+const num_vector POSITIVE_Y_VECTOR(0, 1);
+const num_vector NEGATIVE_X_VECTOR(-1, 0);
+const num_vector NEGATIVE_Y_VECTOR(0, -1);
 
 #endif //SAKANA_NUM_VECTOR_H
