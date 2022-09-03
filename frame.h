@@ -11,7 +11,7 @@
 
 class frame : public QWidget{
 public:
-    frame() = default;
+    frame();
     void paintEvent(QPaintEvent *event) override;
 private:
     spring_point s_point;

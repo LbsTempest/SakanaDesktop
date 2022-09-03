@@ -4,9 +4,14 @@
 
 #include "spring_point.h"
 
+num_vector spring_point::get_position() {
+    return position;
+}
+
 num_vector spring_point::compute_force() {
     double k = 1, mu = 0.1;
-    num_vector force = -position * k - speed * mu;
+    num_vector position_(position.get_x() - 200, position.get_y() - 200);
+    num_vector force = -position_ * k - speed * mu + NEGATIVE_Y_VECTOR * 100;
     return force;
 }
 
@@ -21,6 +26,6 @@ void spring_point::update_speed() {
 }
 
 void spring_point::update_() {
-    update_position();
     update_speed();
+    update_position();
 }

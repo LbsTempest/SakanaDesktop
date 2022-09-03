@@ -9,8 +9,10 @@
 
 class spring_point {
 public:
-    spring_point(): position(0, 0), speed(0, 0) {}
+    spring_point(): position(250, 300), speed(0, 0) {}
     spring_point(const spring_point &) = default;
+
+    num_vector get_position();
 
     num_vector compute_force();
     void update_position();
