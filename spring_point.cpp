@@ -2,25 +2,25 @@
 // Created by 16411 on 9/3/2022.
 //
 
-#include "spring.h"
+#include "spring_point.h"
 
-num_vector spring::compute_force() {
+num_vector spring_point::compute_force() {
     double k = 1, mu = 0.1;
     num_vector force = -position * k - speed * mu;
     return force;
 }
 
-void spring::update_position() {
+void spring_point::update_position() {
     double alpha = 1;
     position = position + speed * alpha;
 }
 
-void spring::update_speed() {
+void spring_point::update_speed() {
     double alpha = 1;
     speed = speed + compute_force() * alpha;
 }
 
-void spring::update_() {
+void spring_point::update_() {
     update_position();
     update_speed();
 }

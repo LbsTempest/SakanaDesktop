@@ -16,7 +16,7 @@ find_package(Qt6 COMPONENTS
         REQUIRED)
 
 add_executable(sakana WIN32 main.cpp num_vector.cpp num_vector.h
-        spring.cpp spring.h frame.cpp frame.h)
+        spring_point.cpp spring_point.h frame.cpp frame.h)
 target_link_libraries(sakana
         Qt::Core
         Qt::Gui

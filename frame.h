@@ -7,12 +7,14 @@
 
 
 #include <QWidget>
+#include "spring_point.h"
 
 class frame : public QWidget{
 public:
-    frame();
+    frame() = default;
     void paintEvent(QPaintEvent *event) override;
-    QPainter a();
+private:
+    spring_point s_point;
 };
 
 

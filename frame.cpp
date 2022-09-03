@@ -3,3 +3,10 @@
 //
 
 #include "frame.h"
+#include "QPainter"
+
+void frame::paintEvent(QPaintEvent *event) {
+    QPainter sakana_painter(this);
+//    sakana_painter.fillRect(0, 200, 300, 200, Qt::color1);
+
+}

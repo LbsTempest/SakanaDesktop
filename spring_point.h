@@ -7,10 +7,10 @@
 #define SAKANA_SPRING_H
 
 
-class spring {
+class spring_point {
 public:
-    spring(): position(0, 0), speed(0, 0) {}
-    spring(const spring &) = default;
+    spring_point(): position(0, 0), speed(0, 0) {}
+    spring_point(const spring_point &) = default;
 
     num_vector compute_force();
     void update_position();
