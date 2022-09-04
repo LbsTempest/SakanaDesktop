@@ -82,3 +82,7 @@ bool num_vector::operator!=(const num_vector &other) const {
 num_vector num_vector::projection(const num_vector &other) const {
     return other.normalize() * (dot(other) / other.length());
 }
+
+num_vector::operator QPoint() const {
+    return {(int) x, (int) y};
+}

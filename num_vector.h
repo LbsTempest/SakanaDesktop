@@ -5,6 +5,8 @@
 #ifndef SAKANA_NUM_VECTOR_H
 #define SAKANA_NUM_VECTOR_H
 
+#include <QPoint>
+
 class num_vector {
 public:
     num_vector(double x, double y): x(x), y(y) {}
@@ -28,6 +30,8 @@ public:
     double operator *(const num_vector &) const;
     bool operator ==(const num_vector &) const;
     bool operator !=(const num_vector &) const;
+
+    operator QPoint() const;
 
     [[nodiscard]] double get_x() const;
     [[nodiscard]] double get_y() const;
